@@ -12,7 +12,7 @@
 ### Music
 
 - 10 000 unique tracks
-- 772 662 user - track - play count
+- 772 662 user - track - rating
 - 8 474 track 1 - track 2 - similitary
 
 ### Movies
