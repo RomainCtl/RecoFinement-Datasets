@@ -115,3 +115,5 @@ CSV HEADER;
 
 SELECT setval('application_app_id_seq', COALESCE((SELECT MAX(app_id)+1 FROM application), 1), false);
 ```
+
+*See `script.sql` file*
