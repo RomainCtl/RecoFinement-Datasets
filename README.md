@@ -2,6 +2,23 @@
 
 [https://github.com/RomainCtl/RecoFinement](https://github.com/RomainCtl/RecoFinement)
 
+## Requirements
+
+### Install
+
+Command line:
+```Bash
+git lfs install
+```
+
+Or download from [here](https://git-lfs.github.com/)
+
+### Pull data
+
+```Bash
+git lfs pull
+```
+
 ## Data structure
 
 ![Relationships](./relationships.png)
