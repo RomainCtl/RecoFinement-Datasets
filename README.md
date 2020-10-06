@@ -40,7 +40,7 @@ git lfs pull
 ### Serie
 
 - 73 504 unique series
-- 5 171 349 unique episodes
+- 2 778 363 unique episodes
 
 ### Games
 
