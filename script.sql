@@ -7,7 +7,7 @@ SELECT setval('application_app_id_seq', COALESCE((SELECT MAX(app_id)+1 FROM publ
 
 --------------------
 
-COPY public.book(isbn,title,author,year_of_publication,publisher,image_url_s,image_url_m,image_url_l)
+COPY public.book(isbn,rating,rating_count,title,author,year_of_publication,publisher,image_url_s,image_url_m,image_url_l)
 FROM 'books.csv'
 DELIMITER ','
 CSV HEADER;
@@ -23,7 +23,7 @@ SELECT setval('game_game_id_seq', COALESCE((SELECT MAX(game_id)+1 FROM public.ga
 
 --------------------
 
-COPY public.movie(movie_id,title,genres,language,actors,year,producers,director,writer,imdbid,tmdbid)
+COPY public.movie(movie_id,rating,rating_count,title,genres,language,actors,year,producers,director,writer,imdbid,tmdbid)
 FROM 'movie.csv'
 DELIMITER ','
 CSV HEADER;
@@ -38,6 +38,24 @@ DELIMITER ','
 CSV HEADER;
 
 SELECT setval('track_track_id_seq', COALESCE((SELECT MAX(track_id)+1 FROM public.track), 1), false);
+
+--------------------
+
+COPY public.serie(serie_id,imdbid,title,start_year,end_year,genres,writers,directors,actors,rating,rating_count)
+FROM 'serie.csv'
+DELIMITER ','
+CSV HEADER;
+
+SELECT setval('serie_serie_id_seq', COALESCE((SELECT MAX(serie_id)+1 FROM public.serie), 1), false);
+
+--------------------
+
+COPY public.episode(episode_id,imdbid,title,year,genres,serie_id,season_number,episode_number,rating,rating_count)
+FROM 'episode.csv'
+DELIMITER ','
+CSV HEADER;
+
+SELECT setval('episode_episode_id_seq', COALESCE((SELECT MAX(episode_id)+1 FROM public.episode), 1), false);
 
 --------------------
 

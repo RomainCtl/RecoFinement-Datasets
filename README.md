@@ -39,7 +39,8 @@ git lfs pull
 
 ### Serie
 
-- *coming soon*
+- 73 504 unique series
+- 5 171 349 unique episodes
 
 ### Games
 
@@ -72,7 +73,7 @@ git lfs pull
 
 ### Serie
 
-- *coming soon*
+- [IMDB](https://developer.imdb.com/):: All TV series metadata
 
 ### Games
 
@@ -97,6 +98,8 @@ git lfs pull
 * `games.csv`
 * `movie.csv`
 * `track.csv`
+* `serie.csv`
+* `episode.csv`
 * `user.csv`
 * `similars_track.csv`
 * `meta_user_application.csv`
