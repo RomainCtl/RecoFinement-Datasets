@@ -41,6 +41,7 @@ git lfs pull
 
 - 73 504 unique series
 - 2 778 363 unique episodes
+- 86 389 462 user - serie - rating
 
 ### Games
 
@@ -102,10 +103,12 @@ git lfs pull
 * `episode.csv`
 * `user.csv`
 * `similars_track.csv`
+* `track_genres.csv`
 * `meta_user_application.csv`
 * `meta_user_book.csv`
 * `meta_user_game.csv`
 * `meta_user_movie.csv`
+* `meta_user_serie.csv`
 * `meta_user_track.csv`
 
 

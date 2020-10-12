@@ -23,7 +23,7 @@ SELECT setval('game_game_id_seq', COALESCE((SELECT MAX(game_id)+1 FROM public.ga
 
 --------------------
 
-COPY public.movie(movie_id,rating,rating_count,title,genres,language,actors,year,producers,director,writer,imdbid,tmdbid)
+COPY public.movie(movie_id,rating,rating_count,title,genres,language,actors,year,producers,director,writer,imdbid,tmdbid,cover)
 FROM 'movie.csv'
 DELIMITER ','
 CSV HEADER;
@@ -32,7 +32,7 @@ SELECT setval('movie_movie_id_seq', COALESCE((SELECT MAX(movie_id)+1 FROM public
 
 --------------------
 
-COPY public.track(track_id,title,year,artist_name,release,track_mmid,recording_mbid,language,rating,rating_count,url,covert_art_url)
+COPY public.track(track_id,title,year,artist_name,release,track_mmid,recording_mbid,language,rating,rating_count,spotify_id,covert_art_url)
 FROM 'track.csv'
 DELIMITER ','
 CSV HEADER;
@@ -66,6 +66,13 @@ CSV HEADER;
 
 SELECT setval('user_user_id_seq', COALESCE((SELECT MAX(user_id)+1 FROM public.user), 1), false);
 
+-------------------
+
+COPY public.track_genres(track_id,tag,frequency)
+FROM 'track_genres.csv'
+DELIMITER ','
+CSV HEADER;
+
 --------------------
 
 COPY public.similars_track(track_id0,track_id1,similarity)
@@ -98,6 +105,13 @@ CSV HEADER;
 
 COPY public.meta_user_movie(user_id,movie_id,rating)
 FROM 'meta_user_movie.csv'
+DELIMITER ','
+CSV HEADER;
+
+--------------------
+
+COPY public.meta_user_serie(user_id,serie_id,rating)
+FROM 'meta_user_serie.csv'
 DELIMITER ','
 CSV HEADER;
 
