@@ -32,7 +32,7 @@ SELECT setval('movie_movie_id_seq', COALESCE((SELECT MAX(movie_id)+1 FROM public
 
 --------------------
 
-COPY public.track(track_id,title,year,artist_name,release,track_mmid,recording_mbid,language,rating,rating_count,spotify_id,covert_art_url)
+COPY public.track(track_id,title,year,artist_name,release,track_mmid,recording_mbid,rating,rating_count,spotify_id,covert_art_url)
 FROM 'track.csv'
 DELIMITER ','
 CSV HEADER;
