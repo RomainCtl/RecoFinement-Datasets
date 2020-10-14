@@ -124,35 +124,7 @@ CSV HEADER;
 
 --------------------
 
-COPY public.s_application_categories(category,count)
-FROM 's_application_categories.csv'
-DELIMITER ','
-CSV HEADER;
-
---------------------
-
-COPY public.s_game_genres(genre,count)
-FROM 's_game_genres.csv'
-DELIMITER ','
-CSV HEADER;
-
---------------------
-
-COPY public.s_movie_genres(genre,count)
-FROM 's_movie_genres.csv'
-DELIMITER ','
-CSV HEADER;
-
---------------------
-
-COPY public.s_serie_genres(genre,count)
-FROM 's_serie_genres.csv'
-DELIMITER ','
-CSV HEADER;
-
---------------------
-
-COPY public.s_track_genres(genre,count)
-FROM 's_track_genres.csv'
+COPY public.genre(genre_id,name,count,content_type)
+FROM 'genres.csv'
 DELIMITER ','
 CSV HEADER;

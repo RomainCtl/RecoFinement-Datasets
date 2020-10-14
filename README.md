@@ -28,8 +28,8 @@ git lfs pull
 
 ### Music
 
-- 10 000 unique tracks
-- 772 662 user - track - rating
+- 9 075 unique tracks
+- 729 995 user - track - rating
 - 8 474 track 1 - track 2 - similitary
 
 ### Movies
@@ -110,6 +110,7 @@ git lfs pull
 * `meta_user_movie.csv`
 * `meta_user_serie.csv`
 * `meta_user_track.csv`
+* `genres.csv`
 
 
 #### Example (for application)
