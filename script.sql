@@ -1,4 +1,4 @@
-COPY public.application(app_id,name,category,rating,reviews,size,installs,type,price,content_rating,genres,last_updated,current_version,android_version)
+COPY public.application(app_id,name,genre_id,rating,reviews,size,installs,type,price,content_rating,last_updated,current_version,android_version)
 FROM 'application.csv'
 DELIMITER ','
 CSV HEADER;
@@ -66,9 +66,16 @@ CSV HEADER;
 
 SELECT setval('user_user_id_seq', COALESCE((SELECT MAX(user_id)+1 FROM public.user), 1), false);
 
+--------------------
+
+COPY public.genre(genre_id,name,count,content_type)
+FROM 'genres.csv'
+DELIMITER ','
+CSV HEADER;
+
 -------------------
 
-COPY public.track_genres(track_id,tag,frequency)
+COPY public.track_genres(track_id,genre_id)
 FROM 'track_genres.csv'
 DELIMITER ','
 CSV HEADER;
@@ -119,12 +126,5 @@ CSV HEADER;
 
 COPY public.meta_user_track(user_id,track_id,rating)
 FROM 'meta_user_track.csv'
-DELIMITER ','
-CSV HEADER;
-
---------------------
-
-COPY public.genre(genre_id,name,count,content_type)
-FROM 'genres.csv'
 DELIMITER ','
 CSV HEADER;
