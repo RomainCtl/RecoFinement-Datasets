@@ -92,26 +92,7 @@ git lfs pull
 
 ## How to import (PostgreSQL)
 
-#### Order:
-
-* `application.csv`
-* `books.csv`
-* `games.csv`
-* `movie.csv`
-* `track.csv`
-* `serie.csv`
-* `episode.csv`
-* `user.csv`
-* `similars_track.csv`
-* `track_genres.csv`
-* `meta_user_application.csv`
-* `meta_user_book.csv`
-* `meta_user_game.csv`
-* `meta_user_movie.csv`
-* `meta_user_serie.csv`
-* `meta_user_track.csv`
-* `genres.csv`
-
+*See `script.sql` file*
 
 #### Example (for application)
 ```SQL
@@ -122,5 +103,3 @@ CSV HEADER;
 
 SELECT setval('application_app_id_seq', COALESCE((SELECT MAX(app_id)+1 FROM application), 1), false);
 ```
-
-*See `script.sql` file*

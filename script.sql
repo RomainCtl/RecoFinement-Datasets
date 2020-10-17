@@ -1,3 +1,12 @@
+COPY public.genre(genre_id,name,count,content_type)
+FROM 'genres.csv'
+DELIMITER ','
+CSV HEADER;
+
+SELECT setval('genre_genre_id_seq', COALESCE((SELECT MAX(genre_id)+1 FROM public.genre), 1), false);
+
+-------------------
+
 COPY public.application(app_id,name,genre_id,rating,reviews,size,installs,type,price,content_rating,last_updated,current_version,android_version)
 FROM 'application.csv'
 DELIMITER ','
@@ -68,15 +77,29 @@ SELECT setval('user_user_id_seq', COALESCE((SELECT MAX(user_id)+1 FROM public.us
 
 --------------------
 
-COPY public.genre(genre_id,name,count,content_type)
-FROM 'genres.csv'
+COPY public.track_genres(track_id,genre_id)
+FROM 'track_genres.csv'
 DELIMITER ','
 CSV HEADER;
 
 -------------------
 
-COPY public.track_genres(track_id,genre_id)
-FROM 'track_genres.csv'
+COPY public.game_genres(game_id,genre_id)
+FROM 'game_genres.csv'
+DELIMITER ','
+CSV HEADER;
+
+-------------------
+
+COPY public.movie_genres(movie_id,genre_id)
+FROM 'movie_genres.csv'
+DELIMITER ','
+CSV HEADER;
+
+-------------------
+
+COPY public.serie_genres(serie_id,genre_id)
+FROM 'serie_genres.csv'
 DELIMITER ','
 CSV HEADER;
 
