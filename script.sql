@@ -23,7 +23,7 @@ CSV HEADER;
 
 --------------------
 
-COPY public.game(game_id,steamid,name,short_description,header_image,website,developers,publishers,price,genres,recommendations,release_date)
+COPY public.game(game_id,steamid,name,short_description,header_image,website,developers,publishers,price,recommendations,release_date)
 FROM 'games.csv'
 DELIMITER ','
 CSV HEADER;
@@ -32,7 +32,7 @@ SELECT setval('game_game_id_seq', COALESCE((SELECT MAX(game_id)+1 FROM public.ga
 
 --------------------
 
-COPY public.movie(movie_id,rating,rating_count,title,genres,language,actors,year,producers,director,writer,imdbid,tmdbid,cover)
+COPY public.movie(movie_id,rating,rating_count,title,language,actors,year,producers,director,writer,imdbid,tmdbid,cover)
 FROM 'movie.csv'
 DELIMITER ','
 CSV HEADER;
@@ -50,7 +50,7 @@ SELECT setval('track_track_id_seq', COALESCE((SELECT MAX(track_id)+1 FROM public
 
 --------------------
 
-COPY public.serie(serie_id,imdbid,title,start_year,end_year,genres,writers,directors,actors,rating,rating_count)
+COPY public.serie(serie_id,imdbid,title,start_year,end_year,writers,directors,actors,rating,rating_count)
 FROM 'serie.csv'
 DELIMITER ','
 CSV HEADER;
