@@ -7,7 +7,7 @@ SELECT setval('genre_genre_id_seq', COALESCE((SELECT MAX(genre_id)+1 FROM public
 
 -------------------
 
-COPY public.application(app_id,name,genre_id,rating,reviews,size,installs,type,price,content_rating,last_updated,current_version,android_version)
+COPY public.application(app_id,name,genre_id,rating,reviews,size,installs,type,price,content_rating,last_updated,current_version,android_version,cover)
 FROM 'application.csv'
 DELIMITER ','
 CSV HEADER;
@@ -50,7 +50,7 @@ SELECT setval('track_track_id_seq', COALESCE((SELECT MAX(track_id)+1 FROM public
 
 --------------------
 
-COPY public.serie(serie_id,imdbid,title,start_year,end_year,writers,directors,actors,rating,rating_count)
+COPY public.serie(serie_id,imdbid,title,start_year,end_year,writers,directors,actors,rating,rating_count,cover)
 FROM 'serie.csv'
 DELIMITER ','
 CSV HEADER;
