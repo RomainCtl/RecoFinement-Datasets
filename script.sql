@@ -105,13 +105,6 @@ CSV HEADER;
 
 --------------------
 
-COPY public.similars_track(track_id0,track_id1,similarity)
-FROM 'similars_track.csv'
-DELIMITER ','
-CSV HEADER;
-
---------------------
-
 COPY public.meta_user_application(app_id,user_id,review,popularity,subjectivity,rating)
 FROM 'meta_user_application.csv'
 DELIMITER ','
