@@ -32,7 +32,7 @@ SELECT setval('game_game_id_seq', COALESCE((SELECT MAX(game_id)+1 FROM public.ga
 
 --------------------
 
-COPY public.movie(movie_id,rating,rating_count,title,language,actors,year,producers,director,writer,imdbid,tmdbid,cover)
+COPY public.movie(movie_id,rating,rating_count,title,language,actors,year,producers,director,writer,imdbid,tmdbid,cover,plot_outline)
 FROM 'movie.csv'
 DELIMITER ','
 CSV HEADER;
@@ -50,7 +50,7 @@ SELECT setval('track_track_id_seq', COALESCE((SELECT MAX(track_id)+1 FROM public
 
 --------------------
 
-COPY public.serie(serie_id,imdbid,title,start_year,end_year,writers,directors,actors,rating,rating_count,cover)
+COPY public.serie(serie_id,imdbid,title,start_year,end_year,writers,directors,actors,rating,rating_count,cover,plot_outline)
 FROM 'serie.csv'
 DELIMITER ','
 CSV HEADER;
