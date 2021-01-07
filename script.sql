@@ -144,3 +144,26 @@ COPY public.meta_user_track(user_id,track_id,rating)
 FROM 'meta_user_track.csv'
 DELIMITER ','
 CSV HEADER;
+
+--------------------
+
+COPY public.role(role_id,name)
+FROM 'role.csv'
+DELIMITER ','
+CSV HEADER;
+
+SELECT setval('role_role_id_seq', COALESCE((SELECT MAX(role_id)+1 FROM public.role), 1), false);
+
+--------------------
+
+COPY public.permission(permission)
+FROM 'permission.csv'
+DELIMITER ','
+CSV HEADER;
+
+--------------------
+
+COPY public.role_permission(role_id,permission)
+FROM 'role_permission.csv'
+DELIMITER ','
+CSV HEADER;
