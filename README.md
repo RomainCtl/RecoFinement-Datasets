@@ -21,7 +21,7 @@ git lfs pull
 
 ## Data structure
 
-![Relationships](./relationships.png)
+See [documentation](https://romainctl.github.io/RecoFinement/)
 
 
 ## Some numbers
@@ -92,14 +92,4 @@ git lfs pull
 
 ## How to import (PostgreSQL)
 
-*See `script.sql` file*
-
-#### Example (for application)
-```SQL
-COPY application(app_id,name,category,rating,reviews,size,installs,type,price,content_rating,genres,last_updated,current_version,android_version)
-FROM '/path/to/application.csv'
-DELIMITER ','
-CSV HEADER;
-
-SELECT setval('application_app_id_seq', COALESCE((SELECT MAX(app_id)+1 FROM application), 1), false);
-```
+See `script.sql` file.
